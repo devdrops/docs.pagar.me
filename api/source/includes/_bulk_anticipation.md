@@ -30,9 +30,9 @@ Ao criar ou atualizar uma antecipação, este será o objeto que você irá rece
 | **status**<br> String | Status atual da antecipação <br> **Valores possíveis**: `building`, `pending`, `approved`, `refused`, `canceled` |
 | **timeframe**<br> String | Período de onde os recebíveis irão vir, do ínicio ou do fim de sua agenda de recebíveis. **Ex**: Caso você escolha do começo (`start`), seu custo será menor mas há maior impacto no seu fluxo de caixa. <br> **Valores possíveis**: `start`, `end` |
 | **payment_date**<br> String | Data de pagamento da antecipação.  |
-| **amount**<br> Integer | Valor bruto, em centavos, da antecipação criada.  |
-| **fee**<br> Integer | Taxa de adquirência relacionada aos recebíveis antecipados. |
-| **anticipation_fee**<br> Integer | Taxa de antecipação relacionada aos recebíveis antecipados. |
+| **amount**<br> Number | Valor bruto, em centavos, da antecipação criada.  |
+| **fee**<br> Number | Taxa de adquirência relacionada aos recebíveis antecipados. |
+| **anticipation_fee**<br> Number | Taxa de antecipação relacionada aos recebíveis antecipados. |
 | **id**<br> String | Identificador da antecipação |
 
 ## Criando uma antecipação
