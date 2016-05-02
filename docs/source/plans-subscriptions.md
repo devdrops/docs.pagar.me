@@ -410,7 +410,7 @@ Isso ocorre pela razão de que não existe motivo para cobrar o valor "não usad
 
 
 
-### Quando uma assinatura vira unpaid, o serviço não é cortado, quando o cliente volta a pagar, a periodicidade se altera, ou seja, cliente consegue "ganhar" estes dias que se encontra em unpaid. Isto está certo?
+### Quando uma assinatura vira `unpaid`, o serviço não é cortado, quando o cliente volta a pagar, a periodicidade se altera, ou seja, cliente consegue "ganhar" estes dias que se encontra em `unpaid`. Isto está certo?
 
 Existem três status de uma assinatura: `pending_payment`, `unpaid` (com prazos de retentativa diferentes) e `canceled`. 
 O comportamento esperado é que durante os dias de `pending_payment` o serviço não seja cancelado e que o cliente "ganhe" 
@@ -432,7 +432,14 @@ Quando um plano é criado, são dados dois parâmetros: `trial_days` e `days`. Q
 
 ### O que acontece quando um usuário que já assinou um plano trial no passado, e depois assinar de novo o mesmo plano no futuro? Gera um erro, assina sem trial, ou libera novamente o trial?
 
-Ele libera novamente o trial. Note que se há uma mudança de plano padrão para um plano com trial, **o comportamento de upgrade/downgrade não se aplica**. Isso quer dizer que independentemente do acréscimo ou decréscimo no valor, será cobrado exatamente o amount da assinatura, e o período ao fim do trial não terá ajuste algum, e será baseado integralmente no `days` do plano.
+Ele libera novamente o trial. Entretanto, o controle desse comportamento pode ser gerenciado em sua aplicação, no caso
+de bloqueio do período de trial, pode ser criado um plano sem período de trial mas com os mesmos valores e periodicidade.
+
+
+
+### O que acontece na mudança de um Plano padrão para um Plano com trial?
+
+**O comportamento de upgrade/downgrade não se aplica**. Isso quer dizer que independentemente do acréscimo ou decréscimo no valor, será cobrado exatamente o amount da assinatura, e o período ao fim do trial não terá ajuste algum, e será baseado integralmente no `days` do plano.
 
 
 
