@@ -1515,7 +1515,7 @@ curl -X GET https://api.pagar.me/1/transactions/calculate_installments_amount \
 -d 'max_installments=3' \
 -d 'free_installments=1' \
 -d 'interest_rate=13' \
--d 'amount=1300'
+-d 'amount=10000'
 ```
 
 ```ruby
@@ -1525,7 +1525,7 @@ PagarMe.api_key = "ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0"
 
 installments_result = PagarMe::Transaction.calculate_installments({
     amount: 10000,
-    interest_rate: 0
+    interest_rate: 13
 })
 ```
 
@@ -1544,18 +1544,18 @@ Usada para calcular o valor de cada uma das parcelas de uma compra.
     "installments": {
         "1": {
             "installment": 1,
-            "amount": 1300,
-            "installment_amount": 1300
+            "amount": 10000,
+            "installment_amount": 10000
         },
         "2": {
             "installment": 2,
-            "amount": 1615,
-            "installment_amount": 807
+            "amount": 10598,
+            "installment_amount": 5299
         },
         "3": {
             "installment": 3,
-            "amount": 1757,
-            "installment_amount": 586
+            "amount": 10897,
+            "installment_amount": 3632
         }
     }
 }
