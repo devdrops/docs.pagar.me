@@ -42,7 +42,7 @@ Objeto contendo os dados de um recebedor.
 | **bank_account**<br> Object | Objeto contendo os dados bancários do recebedor |
 | **transfer_enabled**<br> Boolean | Identifica se o recebedor está habilitado para receber automaticamente ou não |
 | **last_transfer**<br> String | Data da última transferência (ISODate) |
-| **transfer_interval**<br> String | Frequência na qual o recebedor irá ser pago. <br> **Valores possíveis**: `daily`, `weekly`, `montlhy` |
+| **transfer_interval**<br> String | Frequência na qual o recebedor irá ser pago. <br> **Valores possíveis**: `daily`, `weekly`, `monthly` |
 | **transfer_day**<br> Number | Dia no qual o recebedor vai ser pago. Para cada `transfer_day`, existe uma faixa de pagamento possível. <br> `weekly`: 1 a 5, onde 1 é segunda-feira e 5 é sexta-feira <br> `monthly`: 1 a 31 |
 | **automatic_anticipation_enabled**<br> Boolean | Identifica se o recebedor está habilitado para receber automaticamente ou não o valor disponível para antecipação |
 | **anticipatable_volume_percentage**<br> Number | Porcentagem do valor passível de antecipação que será antecipado automaticamente |
@@ -164,7 +164,19 @@ curl -X GET https://api.pagar.me/1/recipients \
 ```cs
 PagarMeService.DefaultApiKey = "ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0";
 
-var recipients = PagarMeService.GetDefaultService().Recipients.FindAll(new Recipient());
+
+var pagarmeRequest = PagarMeService.GetDefaultService().Recipients.BuildFindQuery(new Recipient ());
+
+// Mude/Adicione a query String o que você deseja, e.g: count = 50
+var newTupleForQueryString = Tuple.Create("count", "50");
+
+pagarmeRequest.Query.Add(newTupleForQueryString);
+
+var recipients = PagarMeService.GetDefaultService ().Recipients.FinishFindQuery (pagarmeRequest.Execute ());
+
+
+
+
 ```
 
 Retorna um `Array` de objetos com todos os recebedores criados pela sua companhia.

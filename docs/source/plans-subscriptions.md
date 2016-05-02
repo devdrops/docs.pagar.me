@@ -367,3 +367,78 @@ subscription.cancel # Subscription cancelada
 > - `ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0` pela sua chave de API disponível
 >   no seu [Dashboard](https://dashboard.pagar.me/).
 
+
+##Perguntas frequentes
+
+
+### O que muda no ato de upgrade ou downgrade de uma assinatura?
+
+- No **upgrade**, a periodicidade não é alterada. O que acontece é uma cobrança calculada da seguinte maneira:
+
+1. Se o status não é `paid`, o valor integral do novo plano é cobrado.  
+
+2. Se o status é `paid`, o valor é calculado da seguinte maneira:
+
+    2.1. É obtida a "proporção não usufruída" do plano com (Dias não usados do plano antigo) / (Dias do plano antigo). 
+    Os dias não usados são simplesmente quantos dias faltam pra chegar no `current_period_end` da assinatura. 
+
+    2.2. É obtido o "valor não usufruído" do plano antigo multiplicando essa 
+    "proporção não usufruída" pelo valor do plano antigo. 
+
+    2.3. É subtraído o "valor não usufruído" do valor do plano novo, e esse resultado é cobrado.
+
+Isso ocorre pela razão de que não existe motivo para cobrar o valor "não usado" do plano antigo no plano novo.    
+
+
+- No **downgrade**, não há nova cobrança e a periodicidade é alterada:
+
+1. O `current_period_start` da assinatura passa a ser a data atual.
+
+2. O `current_period_end` da assinatura passa é calculado da seguinte maneira:
+
+    2.1. É obtida a "proporção não usufruída" do plano com (Dias não usados do plano antigo) / (Dias do plano antigo). Os dias 
+    não usados são simplesmente quantos dias faltam pra chegar no `current_period_end` da assinatura.
+
+    2.2. É multiplicada essa "proporção não usufruída" pelo número de dias do novo plano, e o `current_period_end` da 
+    assinatura passa a ser esse número de dias a partir da data atual.
+
+    Isso ocorre para que o tempo mais caro que já foi pago não seja "perdido" pelo cliente. O cliente só volta a ser cobrado 
+    depois que a proporção de dias do plano mais caro já tiver sido usufruída pelo cliente, mesmo que no plano mais barato.
+   
+    Vale notar que o reajuste do período no downgrade **NÃO depende em nada do valor** – só dos períodos.
+
+
+
+
+### Quando uma assinatura vira unpaid, o serviço não é cortado, quando o cliente volta a pagar, a periodicidade se altera, ou seja, cliente consegue "ganhar" estes dias que se encontra em unpaid. Isto está certo?
+
+Existem três status de uma assinatura: `pending_payment`, `unpaid` (com prazos de retentativa diferentes) e `canceled`. 
+O comportamento esperado é que durante os dias de `pending_payment` o serviço não seja cancelado e que o cliente "ganhe" 
+esses dias. Já quando o status vira `unpaid`, um postback é mandado ao cliente. Nessa situação, é esperado que o serviço 
+seja suspenso por parte do cliente, e não da Pagar.me, e que o cliente seja avisado que ele precisa ser cobrado. 
+
+Ou seja, cabe ao cliente fazer com que o cliente não "ganhe" esses dias do status `unpaid`. Essa é a razão de existir um 
+status `unpaid` separado do `pending_payment`. O status `canceled` é **irreversível**. Isso quer dizer que uma nova assinatura 
+precisaria ser criada para que esse serviço fosse continuado. Assim, ele só deveria ser atingido quando o cliente 
+definitivamente não pagar ou cancelar o serviço.
+
+Maiores informações em: [Fluxo de Cobrança](https://docs.pagar.me/plans-subscriptions/#fluxo-de-cobranca)
+
+
+### Após término do período de trial, qual a data efetiva de cobrança da assinatura?
+
+Quando um plano é criado, são dados dois parâmetros: `trial_days` e `days`. Quando acaba o `trial_days`, a data de cobrança é definida a partir da contagem de dias definidos no parâmetro `days`, começando do dia posterior ao final de `trial_days`.
+
+
+### O que acontece quando um usuário que já assinou um plano trial no passado, e depois assinar de novo o mesmo plano no futuro? Gera um erro, assina sem trial, ou libera novamente o trial?
+
+Ele libera novamente o trial. Note que se há uma mudança de plano padrão para um plano com trial, **o comportamento de upgrade/downgrade não se aplica**. Isso quer dizer que independentemente do acréscimo ou decréscimo no valor, será cobrado exatamente o amount da assinatura, e o período ao fim do trial não terá ajuste algum, e será baseado integralmente no `days` do plano.
+
+
+
+
+
+
+
+
+
