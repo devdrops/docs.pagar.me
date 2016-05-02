@@ -112,7 +112,7 @@ Caso você deseje ter um controle maior sobre a inicialização checkout, ou se 
 
 					// INICIAR A INSTÂNCIA DO CHECKOUT
 					// declarando um callback de sucesso
-					var checkout = new PagarMeCheckout.Checkout({"encryption_key":"{{ ENCRYPTION KEY }}", success: function(data) {
+					var checkout = new PagarMeCheckout.Checkout({"encryption_key":"ENCRYPTION KEY", success: function(data) {
 						console.log(data);
 					}});
 
