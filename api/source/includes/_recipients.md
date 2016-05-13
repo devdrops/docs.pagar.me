@@ -91,6 +91,7 @@ recipient.TransferInterval = TransferInterval.Weekly;
 recipient.TransferDay = 5;
 recipient.TransferEnabled = true;
 recipient.BankAccount = PagarMeService.GetDefaultService().BankAccounts.Find("4840");
+recipient.Save();
 ```
 
 Com essa rota você consegue criar um recebedor, definindo o período que ele irá receber os pagamentos e qual a conta bancária que será utilizada para envio dos pagamentos.
