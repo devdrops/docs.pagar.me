@@ -395,7 +395,7 @@ Após criar um recebedor, você pode atualizar todas as configurações do mesmo
 | **transfer_interval**<br> <span class="required">obrigatório</span> | Frequência na qual o recebedor irá ser pago. <br> **Valores possíveis**: `daily`, `weekly`, `monthly` |
 | **transfer_day**<br> <span class="required">obrigatório</span> | Dia no qual o recebedor vai ser pago. |
 | **transfer_enabled**<br> <span class="required">obrigatório</span> | Variável que indica se o recebedor pode receber os pagamentos automaticamente |
-| **anticipatable_volume_percentage** | Limite de volume que pode ser antecipado pelo recebedor |
+| **anticipatable_volume_percentage** | Limite de volume que pode ser antecipado pelo recebedor, no intervalo de 1 a 100. |
 | **bank_account_id**<br> <span class="required">obrigatório\*</span> | Identificador de uma conta bancária previamente criada. Caso você não tenha essa informação, você pode passar os parâmetros necessários para [criação de uma conta bancária](/#criando-uma-conta-bancaria). <br>**OBS:** Para atualizar a conta bancária, ela deve **obrigatóriamente** possuir o mesmo CPF ou CNPJ da conta bancária anterior | 
 | **bank_account**<br> <span class="required">obrigatório\*</span> | Objeto contendo os dados bancários do recebedor. Este objeto, e as suas respectivas propriedades, serão obrigatórios caso não seja informado um `bank_account_id` <br>**OBS:** Para atualizar a conta bancária, ela deve **obrigatóriamente** possuir o mesmo CPF ou CNPJ da conta bancária anterior |
 | **bank_account[bank_code]** | Código do banco do recebedor |
