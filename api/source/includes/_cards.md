@@ -53,6 +53,7 @@ require 'pagarme'
 
 PagarMe.api_key = "ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0"
 
+
 card = PagarMe::Card.new({
 	:card_number => '4111111111111111',
 	:card_holder_name => 'Jose da Silva',
@@ -81,6 +82,7 @@ card.create
 
 ```cs
 PagarMeService.DefaultApiKey = "ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0";
+PagarMeService.DefaultEncryptionKey = "ek_test_Ec8KhxISQ1tug1b8bCcxC2nXfxqRnk";
 
 Card card = new Card();
 card.Number = "4111111111111111";
