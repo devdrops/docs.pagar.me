@@ -1304,7 +1304,7 @@ Você pode capturar o valor de uma transação após a autorização desta, no p
 | **api_key**<br> <span class="required">obrigatório</span> | Chave da API (disponível no seu dashboard) |
 | **:id**<br> <span class="required">obrigatório</span> | Id da transação a ser capturada |
 
-## Estorno de transação
+## Estorno de transação 
 
 > POST https://api.pagar.me/1/transactions/:id/refund
 
@@ -1379,56 +1379,96 @@ Em caso de estorno de uma transação realizada com cartão de crédito, apenas 
 
 Caso a compra tenha sido feita por boleto bancário, você precisará passar os dados da conta bancária que irá receber o valor estornado, ou o id desta conta, que pode ser gerada através da rota `/bank_accounts`.  
 
+
+
 > JSON Retornado - Estorno de Cartão de Crédito (Exemplo)
 
-```json
+
+```json 
 {
-    "object": "transaction",
-    "status": "paid",
-    "refuse_reason": null,
-    "status_reason": "acquirer",
-    "acquirer_response_code": "00",
-    "acquirer_name": "development",
-    "authorization_code": "634306",
-    "soft_descriptor": "testeDeApi",
-    "tid": "1425302928963",
-    "nsu": "1425302928963",
-    "date_created": "2015-03-02T13:28:48.000Z",
-    "date_updated": "2015-03-02T13:37:56.000Z",
-    "amount": 130000,
-    "installments": 1,
-    "id": 184623,
-    "cost": 2000,
-    "postback_url": "http://requestb.in/pkt7pgpk",
-    "payment_method": "credit_card",
-    "antifraud_score": null,
-    "boleto_url": null,
-    "boleto_barcode": null,
-    "boleto_expiration_date": null,
-    "referer": "api_key",
-    "ip": "189.8.94.42",
-    "subscription_id": null,
-    "phone": null,
-    "address": null,
-    "customer": null,
-    "card": {
-        "object": "card",
-        "id": "card_ci6l9fx8f0042rt16rtb477gj",
-        "date_created": "2015-02-25T21:54:56.000Z",
-        "date_updated": "2015-02-25T21:54:57.000Z",
-        "brand": "mastercard",
-        "holder_name": "Api Customer",
-        "first_digits": "548045",
-        "last_digits": "3123",
-        "fingerprint": "HSiLJan2nqwn",
-        "valid": true
-    },
-    "metadata": {
-        "nomeData": "API Doc test",
-        "idData": "13"
-    }
+  "object": "transaction",
+  "status": "refunded",
+  "refuse_reason": null,
+  "status_reason": "acquirer",
+  "acquirer_response_code": "00",
+  "acquirer_name": "pagarme",
+  "authorization_code": "40777",
+  "soft_descriptor": null,
+  "tid": 545176,
+  "nsu": 545176,
+  "date_created": "2016-07-01T01:16:09.145Z",
+  "date_updated": "2016-07-01T01:16:40.736Z",
+  "amount": 10000,
+  "authorized_amount": 10000,
+  "paid_amount": 10000,
+  "refunded_amount": 10000,
+  "installments": 1,
+  "id": 545176,
+  "cost": 0,
+  "card_holder_name": "Aardvark Silva",
+  "card_last_digits": "4242",
+  "card_first_digits": "424242",
+  "card_brand": "visa",
+  "postback_url": null,
+  "payment_method": "credit_card",
+  "capture_method": "ecommerce",
+  "antifraud_score": null,
+  "boleto_url": null,
+  "boleto_barcode": null,
+  "boleto_expiration_date": null,
+  "referer": "session_id",
+  "ip": "132.125.152.103",
+  "subscription_id": null,
+  "phone": {
+    "object": "phone",
+    "ddi": "55",
+    "ddd": "11",
+    "number": "15110808",
+    "id": 36183
+  },
+  "address": {
+    "object": "address",
+    "street": "Avenida Brigadeiro Faria Lima",
+    "complementary": null,
+    "street_number": "1811",
+    "neighborhood": "Jd. Paulistano",
+    "city": "São Paulo",
+    "state": "SP",
+    "zipcode": "01451001",
+    "country": "Brasil",
+    "id": 37461
+  },
+  "customer": {
+    "object": "customer",
+    "document_number": "11122233389",
+    "document_type": "cpf",
+    "name": "Aardvark Silva",
+    "email": "aardvark.silva@pagar.me",
+    "born_at": null,
+    "gender": null,
+    "date_created": "2016-06-29T16:34:39.615Z",
+    "id": 76762
+  },
+  "card": {
+    "object": "card",
+    "id": "card_ciq13rfsh00wxru6eq00ndqkf",
+    "date_created": "2016-06-29T16:34:39.666Z",
+    "date_updated": "2016-07-01T01:16:09.130Z",
+    "brand": "visa",
+    "holder_name": "Aardvark Silva",
+    "first_digits": "424242",
+    "last_digits": "4242",
+    "country": "US",
+    "fingerprint": "8Z6Lxj449c8M",
+    "valid": true,
+    "expiration_date": "1119"
+  },
+  "split_rules": null,
+  "metadata": {},
+  "antifraud_metadata": {}
 }
 ```
+
 
 > JSON Retornado - Estorno de Boleto Bancário (Exemplo)
 
@@ -1490,6 +1530,131 @@ Caso a compra tenha sido feita por boleto bancário, você precisará passar os 
 | **conta_dv**<br> <span class="required">obrigatório\*</span> | Dígito verificador da conta. Obrigatório caso o banco o utilize |
 | **document_number**<br> <span class="required">obrigatório\*</span> | CPF ou CNPJ do favorecido |
 | **legal_name**<br> <span class="required">obrigatório\*</span> | Nome/razão social do favorecido |
+
+
+## Estorno Parcial de uma transação
+
+> POST https://api.pagar.me/1/transactions/:id/refund
+
+```shell
+curl -X POST https://api.pagar.me/1/transactions/562797/refund \
+-d 'api_key=ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0' \
+-d 'amount=1000'
+```
+
+```ruby
+require 'pagarme'
+
+PagarMe.api_key = "ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0"
+
+transaction = PagarMe::Transaction.find_by_id("1234")
+
+transaction.refund
+```
+
+```php
+
+<?php
+    require("pagarme-php/Pagarme.php");
+
+    Pagarme::setApiKey("ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0");
+	
+	$t = PagarMe_Transaction::findById("562797");
+	
+	$params = array("amount" => 1000);
+
+	$t->refund($params);
+
+?>
+
+```
+
+```cs
+PagarMeService.DefaultApiKey = "ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0";
+
+var transaction = PagarMeService.GetDefaultService().Transactions.Find("562797");
+
+transaction.Refund(1000);
+```
+
+
+O estorno parcial obedece as mesmas regras de um estorno total, e usa o parâmetro `amount` como referência para o valor 
+a ser estornado. Entretanto, só pode ser usado para transações pagas por cartão de crédito, e com a observação de que
+o `status` da transação vai permanecer `paid` até que o valor total da transação tenha sido estornado.
+
+> JSON Retornado
+
+```json
+{
+"object":"transaction",
+	"status":"paid",
+	"refuse_reason":null,
+	"status_reason":"acquirer",
+	"acquirer_response_code":"00",
+	"acquirer_name":"pagarme",
+	"authorization_code":"845088",
+	"soft_descriptor":null,
+	"tid":562797,
+	"nsu":562797,
+	"date_created":"2016-07-10T17:09:41.289Z",
+	"date_updated":"2016-07-11T02:14:53.547Z",
+	"amount":9900,
+	"authorized_amount":9900,
+	"paid_amount":9900,
+	"refunded_amount":1000,
+	"installments":1,
+	"id":562797,
+	"cost":50,
+	"card_holder_name":"John Smith",
+	"card_last_digits":"4242",
+	"card_first_digits":"424242",
+	"card_brand":"visa",
+	"postback_url":null,
+	"payment_method":"credit_card",
+	"capture_method":"ecommerce",
+	"antifraud_score":null,
+	"boleto_url":null,
+	"boleto_barcode":null,
+	"boleto_expiration_date":null,
+	"referer":"session_id",
+	"ip":"162.15.6.27",
+	"subscription_id":71865,
+	"phone":null,
+	"address":null,
+	"customer":{
+		"object":"customer",
+		"document_number":null,
+		"document_type":"cpf",
+		"name":null,
+		"email":"john.smith@emailg.com",
+		"born_at":null,
+		"gender":null,
+		"date_created":"2016-07-10T17:09:41.236Z",
+		"id":79118},
+	"card":{
+		"object":"card",
+		"id":"card_ciqguuuqk001dkg6erhqzh4jf",
+		"date_created":"2016-07-10T17:09:41.278Z",
+		"date_updated":"2016-07-10T17:09:41.834Z",
+		"brand":"visa",
+		"holder_name":"John Smith",
+		"first_digits":"424242",
+		"last_digits":"4242",
+		"country":"US",
+		"fingerprint":"8Z6Lxj449c8M",
+		"valid":true,
+		"expiration_date":"1119"
+	},
+	"split_rules":null,
+	"metadata":{},
+	"antifraud_metadata":{}
+}
+```
+| Parâmetro | Descrição |
+|--:|:--|
+| **api_key**<br> <span class="required">obrigatório</span> | Chave da API (disponível no seu dashboard) |
+| **:id**<br> <span class="required">obrigatório</span> | id da transação |
+| **amount**<br><span class="required">obrigatório</span> | Valor desejado para o estorno da transação|
 
 ## Status das transações
 

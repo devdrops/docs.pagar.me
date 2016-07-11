@@ -151,8 +151,11 @@ subscription.create
     require("pagarme-php/Pagarme.php");
 
     Pagarme::setApiKey("ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0");
+	
+	$plan = PagarMe_Plan::findById("13850");
 
 	$subscription = new PagarMe_Subscription(array(
+		"plan" => $plan,
 		"card_number" => "4901720080344448",
 		"card_holder_name" => "Jose da Silva",
 		"card_expiration_month" => 12,
@@ -163,6 +166,8 @@ subscription.create
 		)));
 
 	$subscription->create();
+
+?>
 ```
 
 ```cs
