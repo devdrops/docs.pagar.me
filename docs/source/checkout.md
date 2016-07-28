@@ -114,12 +114,12 @@ Caso você deseje ter um controle maior sobre a inicialização checkout, ou se 
 					// declarando um callback de sucesso
 					var checkout = new PagarMeCheckout.Checkout({"encryption_key":"ENCRYPTION KEY", success: function(data) {
 						console.log(data);
-						//Adicionar aqui as ações que deverão ocorrer depois da transação. como envio do token
+						//Tratar aqui as ações de callback do checkout, como exibição de mensagem ou envio de token para captura da transação
 					}});
 
 					// DEFINIR AS OPÇÕES
 					// e abrir o modal
-					// É mecessário passar os valores boolean em "var params" como string
+					// É necessário passar os valores boolean em "var params" como string
 					var params = {"customerData":"false", "amount":"100000", "createToken": "true", "interestRate": 10 };
 					checkout.open(params);
 				});
