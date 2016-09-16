@@ -191,7 +191,8 @@ using PagarMe.Mpos;
 SerialPort port = new SerialPort(...);
 port.Open();
 
-Mpos mpos = new Mpos(port.BaseStream, "{ENCRYPTION_KEY}");
+/* Guardamos arquivos de cache no diretório C:\\Storage\\. É *obrigatório* colocar a última barra ao final do path!
+Mpos mpos = new Mpos(port.BaseStream, "{ENCRYPTION_KEY}", "C:\\Storage\\");
 mpos.Errored += (sender, e) => { /* Lidar com Erro */ };
 
 await mpos.Initialize();
@@ -385,7 +386,8 @@ using PagarMe.Mpos;
 SerialPort port = new SerialPort(...);
 port.Open();
 
-Mpos mpos = new Mpos(port.BaseStream, "{ENCRYPTION_KEY}");
+/* Guardamos arquivos de cache no diretório C:\\Storage\\. É *obrigatório* colocar a última barra ao final do path!
+Mpos mpos = new Mpos(port.BaseStream, "{ENCRYPTION_KEY}", "C:\\Storage\\");
 mpos.Errored += (sender, e) => { /* Lidar com Erro */ };
 
 await mpos.Initialize();
