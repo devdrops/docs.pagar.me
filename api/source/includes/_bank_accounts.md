@@ -126,11 +126,11 @@ Cria uma conta bancária para futuros pagamentos.
 | Parâmetro | Descrição |
 |--:|:--|
 | **api_key**<br> <span class="required">obrigatório</span> | Chave da API (disponível no seu dashboard) |
-| **bank_code**<br> <span class="required">obrigatório</span> | Código do banco |
-| **agencia**<br> <span class="required">obrigatório</span> | Agência onde sua conta foi criada |
-| **agencia_dv** | Dígito verificador da sua agência |
-| **conta**<br> <span class="required">obrigatório</span> | Número da conta bancária |
-| **conta_dv**<br> <span class="required">obrigatório</span> | Dígito verificador da conta |
+| **bank_code**<br> <span class="required">obrigatório</span> | Código do banco <br /> **OBS**: Deve conter 3 caracteres, apenas números |
+| **agencia**<br> <span class="required">obrigatório</span> | Agência onde sua conta foi criada <br /> **OBS**: Limite de 5 caracteres, apenas números |
+| **agencia_dv** | Dígito verificador da sua agência <br /> **OBS**: Deve conter 1 dígito, apenas números |
+| **conta**<br> <span class="required">obrigatório</span> | Número da conta bancária <br /> **OBS**: Limite de 13 caracteres, apenas números |
+| **conta_dv**<br> <span class="required">obrigatório</span> | Dígito verificador da conta <br /> **OBS**: Limite de 2 caracteres, apenas alfanuméricos |
 | **document_number**<br> <span class="required">obrigatório</span> | Documento identificador do titular da conta (cpf ou cnpj)<br> **Ex**: `35146484252` |
 | **legal_name**<br> <span class="required">obrigatório</span> | Nome completo (se pessoa física) ou razão social (se pessoa jurídica) |
 
