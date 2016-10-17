@@ -1074,7 +1074,7 @@ curl -X GET https://api.pagar.me/1/transactions/314578/operations \
 ```cs
 ```
 
-Retorna todo o histórico de uma transaçnao, ou seja, toda e qualquer operação que já aconteceu com ela. <br><br>**Ex**: autorização, análise antifraude, captura, estorno, chargeback, emissão de boleto, conciliação, etc.
+Retorna todo o histórico de uma transação, ou seja, toda e qualquer operação que já aconteceu com ela. <br><br>**Ex**: autorização, análise antifraude, captura, estorno, chargeback, emissão de boleto, conciliação, etc.
 
 > JSON Retornado (Exemplo)
 
