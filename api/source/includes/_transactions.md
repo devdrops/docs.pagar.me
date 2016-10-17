@@ -1828,7 +1828,7 @@ curl -X GET https://api.pagar.me/1/transactions/card_hash_key \
 ```cs
 ```
 
-Para gerarmos o `card_hash`, primeiramente devemos requisitar do servidr a chave pública para criptografarmos nossos dados.
+Para gerarmos o `card_hash`, primeiramente devemos requisitar do servidor a chave pública para criptografarmos nossos dados.
 
 > JSON retornado (exemplo):
 
