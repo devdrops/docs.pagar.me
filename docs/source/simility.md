@@ -390,7 +390,6 @@ As próximas colunas são JSONs contendo listas de várias informações sobre a
 * **events** - Apenas ticketerias têm esta coluna:
 
 ```javascript
-
 [
     { // todos os eventos para os quais ingressos foram comprados nesta transação
         "id": "0", // ID do evento
@@ -423,7 +422,6 @@ As próximas colunas são JSONs contendo listas de várias informações sobre a
         ]
     }
 ]
-
 ```
 
 * **restaurant** - Apenas serviços de entrega de comida têm esta coluna:
