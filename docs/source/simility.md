@@ -25,7 +25,7 @@ Este setup é para testar a instalação correta, e não deve ser utilizado em p
 
 #### JS2: Padrão
 
-Esta é a instalação padrão em produção. 
+Esta é a instalação padrão em produção.
 
 ```html
 
@@ -363,7 +363,7 @@ As informações das colunas seguintes são sobre a pessoa que receberá o produ
 
 As próximas colunas são JSONs contendo listas de várias informações sobre as transações.
 
-* **shopping_cart** 
+* **shopping_cart**
 
 ```javascript
 [
@@ -416,7 +416,7 @@ As próximas colunas são JSONs contendo listas de várias informações sobre a
                 "price": 0, // preço unitário
                 "available_number": 0, // número de tickets ainda disponíveis deste tipo no momento da compra
                 "total_number": 0, // número total deste ticket que foram disponibilizados
-                "identity_verified": false, // true se a identidade for verificada no evento 
+                "identity_verified": false, // true se a identidade for verificada no evento
                 "assigned_seats": false // true se o evento tiver local marcado
             }
         ]
@@ -478,8 +478,13 @@ As próximas colunas são JSONs contendo listas de várias informações sobre a
 	"supports_schedule": false, // true se esse restaurante aceita marcar horários de entrega de comida
 	"supports_order_tracking": false // true se esse restaurante fornece dados de acompanhamento do pedido
 }
-
 ```
+
+<script type="text/javascript">
+  // Workaround to bypass `rouge` false-positive error
+  // MAY GOD BE WITH US
+  Array.from(document.getElementsByClassName("err")).forEach( (element, index, array) => element.className = "p" );
+</script>
 
 ## Antifraud Metadata
 Uma vez que o modelo estiver construído e o script de reconhecimento de dispositivos estiver integrado, as transações podem começar a ser processadas pelo antifraude. Para isso, um JSON com as mesmas informações que as pedidas acima precisa ser enviado dentro do campo da integração ```antifraud_metadata```. Instruções para mandar informações neste campo na API se encontram neste link.
