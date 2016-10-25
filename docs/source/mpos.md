@@ -250,7 +250,7 @@ mpos.wait();
 ```
 
 > Não se esqueça de substituir `{ENCRYPTION_KEY}` pela
-> sua chave de encriptação disponível no seu
+> sua [chave de encriptação](https://dashboard.pagar.me/#/myaccount/apikeys) disponível no seu
 > [Dashboard](https://dashboard.pagar.me/).
 
 Todas as plataformas apresentam uma função de processamento de pagamento com três parâmetros: `amount`, `applications` e `magstripePaymentMethod`.
@@ -430,7 +430,7 @@ mpos.wait();
 ```
 
 > Não se esqueça de substituir `{ENCRYPTION_KEY}` pela
-> sua chave de encriptação disponível no seu
+> sua [chave de encriptação](https://dashboard.pagar.me/#/myaccount/apikeys) disponível no seu
 > [Dashboard](https://dashboard.pagar.me/).
 
 O booleano `force` dos exemplos especifica o comportamento de atualização de tabelas no pinpad. Caso `true`, instala sempre as tabelas baixadas no pinpad. Caso `false`, instala as tabelas no pinpad **somente** se a versão instalada no pinpad for diferente da versão das tabelas baixadas, evitando instalações de tabelas de forma redundante.

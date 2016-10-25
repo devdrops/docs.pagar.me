@@ -37,7 +37,7 @@ transação pelo seu servidor. Nós cuidaremos de todo o resto! :)
 ```
 
 > Não se esqueça de substituir `ek_test_Ec8KhxISQ1tug1b8bCcxC2nXfxqRnk` pela
-> sua chave de encriptação disponível no seu
+> sua [chave de encriptação](https://dashboard.pagar.me/#/myaccount/apikeys) disponível no seu
 > [Dashboard](https://dashboard.pagar.me/).
 
 O código acima irá inserir o botão de pagar na sua página. Você pode alterar
