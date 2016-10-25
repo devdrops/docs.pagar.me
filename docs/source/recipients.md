@@ -45,7 +45,7 @@ curl -X POST https://api.pagar.me/1/recipients \
 ```
 
 > Não se esqueça de substituir `ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0` pela
-> sua chave de API disponível no seu [Dashboard](https://dashboard.pagar.me/).
+> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys) disponível no seu [Dashboard](https://dashboard.pagar.me/).
 
 ## Detalhes do recebimento
 
