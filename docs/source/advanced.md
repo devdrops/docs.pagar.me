@@ -55,7 +55,7 @@ end
 > Não se esqueça de:<br/>
 > - `postback_body` pelo conteúdo do body da requisição HTTP do postback,<br/>
 > - `1213e67a3b34c2848f8317d29bcb8cbc9e0979b8` pela `signature` recebido em X-Hub-Signature,<br/>
-> - `ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0` pela sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys)] disponível<br/>
+> - `ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0` pela sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys) disponível<br/>
 >   no seu [Dashboard](https://dashboard.pagar.me/).
 
 ## Enviando dados adicionais (metadata)
@@ -131,4 +131,4 @@ transaction.Save();
 ```
 
 > Não se esqueça de substituir `ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0` pela
-> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys)] disponível no seu [Dashboard](https://dashboard.pagar.me/).
+> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys) disponível no seu [Dashboard](https://dashboard.pagar.me/).

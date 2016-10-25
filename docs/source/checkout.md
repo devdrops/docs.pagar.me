@@ -202,7 +202,7 @@ transaction.Capture(1000);
 ```
 
 > Não se esqueça de substituir `ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0` pela
-> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys)] disponível no seu
+> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys) disponível no seu
 > [Dashboard](https://dashboard.pagar.me/).
 
 Após realizar a captura de uma transação de cartão de crédito, a transação
@@ -354,7 +354,7 @@ subscription.Save();
 ```
 
 > Não se esqueça de substituir `ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0` pela
-> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys)] disponível no seu
+> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys) disponível no seu
 > [Dashboard](https://dashboard.pagar.me/).
 
 

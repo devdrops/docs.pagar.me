@@ -78,7 +78,7 @@ TransactionStatus status = transaction.Status;
 ```
 
 > Não se esqueça de substituir `ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0` pela
-> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys)] disponível no seu [Dashboard](https://dashboard.pagar.me/).
+> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys) disponível no seu [Dashboard](https://dashboard.pagar.me/).
 
 Após realizar uma transação de cartão de crédito, a mesma terá status
 `paid`, indicando que o cartão do usuário foi debitado com sucesso.
@@ -164,7 +164,7 @@ string boletoBarcode = transaction.BoletoBarcode;
 ```
 
 > Não se esqueça de substituir `ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0` pela
-> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys)] disponível no seu [Dashboard](https://dashboard.pagar.me/).
+> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys) disponível no seu [Dashboard](https://dashboard.pagar.me/).
 
 A transação terá status `waiting_payment` até o pagamento do boleto
 bancário. A URL do boleto bancário para pagamento estará disponível na variável
@@ -252,7 +252,7 @@ transaction.Save();
 ```
 
 > Não se esqueça de substituir `ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0` pela
-> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys)] disponível no seu [Dashboard](https://dashboard.pagar.me/).
+> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys) disponível no seu [Dashboard](https://dashboard.pagar.me/).
 
 <aside class="notice">Você pode utilizar o serviço
 [RequestBin](http://requestb.in) para gerar URLs de POSTback de teste e
@@ -339,7 +339,7 @@ curl -X POST 'https://api.pagar.me/1/transactions' \
 ```
 
 > Não se esqueça de substituir `ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0` pela
-> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys)] disponível no seu [Dashboard](https://dashboard.pagar.me/).
+> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys) disponível no seu [Dashboard](https://dashboard.pagar.me/).
 
 ## Enviando dados do cliente para o Pagar.me (antifraude) 
 
@@ -459,7 +459,7 @@ transaction.Save();
 ```
 
 > Não se esqueça de substituir `ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0` pela
-> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys)] disponível no seu [Dashboard](https://dashboard.pagar.me/).
+> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys) disponível no seu [Dashboard](https://dashboard.pagar.me/).
 
 ## Cancelando uma Transação 
 
@@ -500,4 +500,4 @@ TransactionStatus status = transaction.Status;
 ```
 
 > Não se esqueça de substituir `ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0` pela
-> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys)] disponível no seu [Dashboard](https://dashboard.pagar.me/).
+> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys) disponível no seu [Dashboard](https://dashboard.pagar.me/).

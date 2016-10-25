@@ -66,7 +66,7 @@ plan.create
 ```
 
 > Não se esqueça de substituir `ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0` pela
-> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys)] disponível no seu [Dashboard](https://dashboard.pagar.me/).
+> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys) disponível no seu [Dashboard](https://dashboard.pagar.me/).
 
 ### Configurações do plano
 
@@ -137,7 +137,7 @@ subscription.create
 > Não se esqueça de substituir:<br/>
 > - `1234` pelo ID do plano,<br/>
 > - `{CARD_HASH}` pelo `card_hash` gerado no browser do cliente,<br/>
-> - `ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0` pela sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys)] disponível
+> - `ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0` pela sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys) disponível
 >   no seu [Dashboard](https://dashboard.pagar.me/).
 
 ## Fluxo de cobrança
@@ -306,7 +306,7 @@ subscription.create
 ```
 
 > Não se esqueça de substituir `ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0` pela
-> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys)] disponível no seu [Dashboard](https://dashboard.pagar.me/).
+> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys) disponível no seu [Dashboard](https://dashboard.pagar.me/).
 
 <aside class="notice">Você pode utilizar o serviço
 [RequestBin](http://requestb.in) para gerar URLs de POSTback de teste e
@@ -364,7 +364,7 @@ subscription.cancel # Subscription cancelada
 
 > Não se esqueça de substituir:<br/>
 > - `{ID da Assinatura}` pelo ID da assinatura,<br/>
-> - `ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0` pela sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys)] disponível
+> - `ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0` pela sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys) disponível
 >   no seu [Dashboard](https://dashboard.pagar.me/).
 
 

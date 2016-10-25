@@ -78,7 +78,7 @@ string cardId = card.Id;
 ```
 
 > Não se esqueça de substituir `ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0` pela
-> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys)] disponível no seu [Dashboard](https://dashboard.pagar.me/).
+> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys) disponível no seu [Dashboard](https://dashboard.pagar.me/).
 
 ## Recuperando o cartão de uma transação anterior
 
@@ -122,7 +122,7 @@ string cardId = transaction.Card.Id;
 ```
 
 > Não se esqueça de substituir `ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0` pela
-> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys)] disponível no seu [Dashboard](https://dashboard.pagar.me/).
+> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys) disponível no seu [Dashboard](https://dashboard.pagar.me/).
 
 ## Realizando uma transação usando um cartão 
 
@@ -178,4 +178,4 @@ transaction.Save();
 ```
 
 > Não se esqueça de substituir `ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0` pela
-> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys)] disponível no seu [Dashboard](https://dashboard.pagar.me/).
+> sua [chave de API](https://dashboard.pagar.me/#/myaccount/apikeys) disponível no seu [Dashboard](https://dashboard.pagar.me/).
