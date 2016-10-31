@@ -151,6 +151,15 @@ curl -X GET https://api.pagar.me/1/recipients \
 ```
 
 ```ruby
+require 'pagarme'
+
+PagarMe.api_key = "ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0"
+
+page = 1
+count = 10
+recipients = PagarMe::Recipient.all(page, count)
+# ou
+recipients = PagarMe::Recipient.all # => default page = 1, count = 10
 ```
 
 ```php
