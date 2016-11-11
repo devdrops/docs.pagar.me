@@ -51,7 +51,7 @@ status = transaction.status # status da transação
 <?php
 	require("pagarme-php/Pagarme.php");
 
-	Pagarme::setApiKey("ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0");
+	PagarMe::setApiKey("ak_test_grXijQ4GicOa2BLGZrDRTR5qNQxJW0");
 
 	$transaction = new PagarMe_Transaction(array(
 		'amount' => 1000,
